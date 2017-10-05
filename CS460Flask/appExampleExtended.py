@@ -40,7 +40,7 @@ def index():
 
 @app.route('/search/')
 def search():
-    return render_template('search.html')
+	return render_template('search.html')
 
 @app.route('/results/', methods = ['POST', 'GET'])
 def results():
@@ -67,4 +67,4 @@ def results():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
