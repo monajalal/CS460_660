@@ -1,0 +1,40 @@
+<!-- Author: Craig Einstein -->
+
+<html>
+  
+  <head>
+    <title>Brilliant Webpage!</title>
+  </head>
+  
+  <body>
+
+    <h1>Welcome!</h1>
+
+    {% if data and query %}
+    <h4>Here is the data for "{{query}}"!</h4>
+
+    <ul>
+      {% for row in data %}
+      <li>
+	{% for item in row %}
+	[{{item}}]
+	{% endfor %}
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% elif query and error %} <!-- in case of an error! -->
+    <p>There was an issue with the query "{{query}}"</p><br>
+    <p>The error was "{{error}}"</p><br>
+    
+    
+    {% else %}
+    <h4>This is the main webpage!</h4>
+
+    {% endif %}
+
+    <a href="/search">SEARCH</a> <!-- link to the search page -->
+  </body>
+</html>
+    
+    

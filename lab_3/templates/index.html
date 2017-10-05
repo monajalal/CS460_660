@@ -1,0 +1,38 @@
+<!-- Author: Craig Einstein -->
+<!-- This is how to write a comment in HTML! -->
+
+<html>
+
+  <head>
+    <title>Brilliant Webpage!</title> <!-- title of the webpage -->
+  </head>
+
+  <body>
+
+    <h1>Welcome!</h1>
+
+    {% if data and query %} <!-- if statements using Jinja -->
+
+    <h4>Here is the data for "{{query}}"!</h4> <!-- prints the query as h4 -->
+
+    <ul> <!-- creates an unordered list -->
+      {% for row in data %} <!-- Jinja for loop -->
+      <li>
+	{% for item in row %}
+	[{{item}}] <!-- print the item in brackets -->
+	{% endfor %} <!-- have to define the end for ifs and fors! -->
+      </li>
+      {% endfor %}
+    </ul>
+    
+    {% else %} <!-- if there is no data or query -->
+    <h4>This is the main webpage!</h4>
+
+    {% endif %}
+
+
+  </body>
+  
+</html>
+    
+    
